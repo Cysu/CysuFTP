@@ -1,10 +1,10 @@
 CC := gcc
-CFLAGS := -g -Wall -O2
+CFLAGS := -g -w -O2
 
 COMMONDIR := ../common
 
 OBJS := main.o ftpserver.o \
-	$(COMMONDIR)/common.o $(COMMONDIR)/utils.o
+	$(COMMONDIR)/common.o $(COMMONDIR)/utils.o $(COMMONDIR)/const.o
 
 all: ftpserver
 
@@ -14,7 +14,8 @@ ftpserver: $(OBJS)
 $(OBJS): %.o: %.c
 	$(CC) $(CFLAGS) -c -o $@ $^
 
-.PHONY: clean
+.PHONY:
 clean:
-	rm *.o
-	rm $(COMMONDIR)/*.o
+	rm -f *.o
+	rm -f ftpserver
+	rm -f ../common/*.o

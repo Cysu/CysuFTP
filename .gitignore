@@ -1,5 +1,7 @@
 *.swp
 *.o
+*.sh
 ftpserver
 ftpclient
+
 
