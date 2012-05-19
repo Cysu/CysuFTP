@@ -16,6 +16,20 @@ int socket_listen(int port) {
     return sock;
 }
 
+int socket_connect(char* host, int port) {
+    int sock = -1;
+    if ((sock = socket(AF_INET, SOCK_STREAM, 0)) < 0) return -1;
+
+    sockaddr_in addr;
+    addr.sin_family = AF_INET;
+    addr.sin_addr.s_addr = inet_addr(host);
+    addr.sin_port = htons(port);
+
+    if (connect(sock, (sockaddr*)&addr, sizeof addr) < 0) return -1;
+
+    return sock;
+}
+
 int socket_accept(int sock) {
     sockaddr_in addr;
     socklen_t addr_len = sizeof addr;

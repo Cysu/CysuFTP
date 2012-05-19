@@ -40,3 +40,20 @@ void get_arg(const char* command, char* arg) {
     *arg = '\0';
 }
 
+void read_line(char* buf) {
+    char c;
+    while (1) {
+        scanf("%c", &c);
+        if (c == '\n') break;
+        *buf++ = c;
+    }
+    *buf = '\0';
+}
+
+void print_file(const char* file_name) {
+    FILE* file = fopen(file_name, "r");
+    char c;
+    while (fscanf(file, "%c", &c) != EOF)
+        printf("%c", c);
+    fclose(file);
+}

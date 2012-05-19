@@ -14,6 +14,7 @@
 #define ERR_FORK            "fork failed\n"
 #define ERR_SOCKET_LISTEN   "socket listen failed\n"
 #define ERR_SOCKET_ACCEPT   "socket accept failed\n"
+#define ERR_SOCKET_CONNECT  "socket connect failed\n"
 #define ERR_SOCKET_CLOSE    "socket close failed\n"
 #define ERR_SOCKET_SEND     "socket send failed\n"
 #define ERR_SOCKET_RECV     "socket recv failed\n"

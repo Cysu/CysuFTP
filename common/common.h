@@ -1,7 +1,6 @@
 #ifndef COMMON_H
 #define COMMON_H
 
-#include <stdio.h>
 #include <unistd.h>
 #include <sys/types.h>
 #include <sys/socket.h>
@@ -13,6 +12,7 @@ typedef struct sockaddr sockaddr;
 typedef struct sockaddr_in sockaddr_in;
 
 int socket_listen(int port);
+int socket_connect(char* host, int port);
 int socket_accept(int sock);
 int socket_close(int sock);
 

@@ -10,6 +10,7 @@ void quit() {
         Log(ERROR, ERR_SOCKET_CLOSE);
     if (socket_close(client_socket) < 0)
         Log(ERROR, ERR_SOCKET_CLOSE);
+    ftpserver_clean();
     exit(EXIT_SUCCESS);
 }
 
